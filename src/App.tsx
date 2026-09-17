@@ -57,7 +57,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 font-sans text-slate-900">
+    <div className="min-h-screen w-full overflow-x-hidden flex flex-col bg-slate-50 font-sans text-slate-900">
       {/* Navigation */}
       <Navbar
         currentPage={currentPage}
