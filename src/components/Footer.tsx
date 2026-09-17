@@ -128,7 +128,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               ))}
             </ul>
             <p className="text-[11px] text-slate-500 pt-1">
-              Serving Zip Codes: 85029, 85021, 85023, 85051, 85020, 85053
+              Serving Zip Codes: 85029, 85022, 85023, and 85053
             </p>
           </div>
 

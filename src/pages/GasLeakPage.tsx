@@ -81,7 +81,7 @@ export const GasLeakPage: React.FC<GasLeakPageProps> = ({ onNavigate, onOpenQuot
               </h1>
 
               <p className="text-base text-slate-200 max-w-2xl leading-relaxed">
-                Connect 24/7 with pre-screened, ROC-licensed gas line plumbing specialists in North Mountain Village, Phoenix (85029). Fast electronic sniffing, pressure drop testing, and red-tag meter clearance repairs.
+                Connect 24/7 with pre-screened, ROC-licensed gas line plumbing specialists in North Mountain Village and North Phoenix (serving 85029, 85022, 85023, and 85053). Fast electronic sniffing, pressure drop testing, and red-tag meter clearance repairs.
               </p>
 
               <div className="flex flex-wrap items-center gap-3 pt-2">

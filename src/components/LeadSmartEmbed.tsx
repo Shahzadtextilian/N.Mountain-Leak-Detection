@@ -75,7 +75,7 @@ export const LeadSmartEmbed: React.FC<LeadSmartEmbedProps> = ({
         </span>
         <span className="inline-flex items-center gap-1">
           <Sparkles className="w-4 h-4 text-amber-500 shrink-0" />
-          North Mountain Village &amp; 85029 Dispatch
+          Serving Zips: 85029, 85022, 85023, 85053
         </span>
       </div>
 

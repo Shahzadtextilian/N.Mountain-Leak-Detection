@@ -185,7 +185,7 @@ export const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({
             <Clock className="w-3.5 h-3.5" /> Fast Local Match
           </span>
           <span className="text-[11px] font-medium text-slate-500 bg-slate-100 px-2 py-0.5 rounded">
-            North Mountain Village & 85029
+            Serving Zips: 85029, 85022, 85023, 85053
           </span>
         </div>
         <h3 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
@@ -371,6 +371,23 @@ export const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({
               onChange={(e) => setZip(e.target.value)}
               className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm text-slate-900 font-semibold focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
+            <div className="flex items-center gap-1 mt-1.5 flex-wrap">
+              <span className="text-[10px] text-slate-400">Serving:</span>
+              {['85029', '85022', '85023', '85053'].map((z) => (
+                <button
+                  key={z}
+                  type="button"
+                  onClick={() => setZip(z)}
+                  className={`text-[10px] px-1.5 py-0.5 rounded font-mono transition-colors ${
+                    zip === z
+                      ? 'bg-blue-600 text-white font-bold'
+                      : 'bg-slate-200/70 text-slate-700 hover:bg-slate-300'
+                  }`}
+                >
+                  {z}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 

@@ -56,7 +56,7 @@ export const DisclaimerPage: React.FC<DisclaimerPageProps> = ({ onNavigate, onOp
               1. Referral &amp; Lead Generation Services
             </h3>
             <p>
-              The purpose of Leak Detection Pro (accessible via our website and telephone hotline {BUSINESS_INFO.phoneFormatted}) is to assist property owners in North Mountain Village, Phoenix (85029) by connecting them with independent, third-party contractors who perform water leak detection, slab leak testing, gas leak locating, and pipe repairs. When you request service, you are requesting a referral to an independent contractor.
+              The purpose of Leak Detection Pro (accessible via our website and telephone hotline {BUSINESS_INFO.phoneFormatted}) is to assist property owners in North Mountain Village and North Phoenix (serving zip codes 85029, 85022, 85023, and 85053) by connecting them with independent, third-party contractors who perform water leak detection, slab leak testing, gas leak locating, and pipe repairs. When you request service, you are requesting a referral to an independent contractor.
             </p>
           </div>
 

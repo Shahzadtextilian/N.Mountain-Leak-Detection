@@ -12,7 +12,7 @@ export const BUSINESS_INFO = {
   neighborhood: 'North Mountain Village',
   hours: '24/7 Emergency Dispatch Network',
   serviceRadius: 'North Mountain Village & Greater Phoenix Metro',
-  targetZips: ['85029', '85021', '85023', '85051', '85020', '85053', '85085'],
+  targetZips: ['85029', '85022', '85023', '85053'],
   localLandmarks: [
     'W Sahuaro Dr & 28th Ave corridor',
     'Metrocenter redevelopment district',
@@ -37,19 +37,17 @@ IMPORTANT DISCLOSURES:
 };
 
 export const CITY_HEIGHTS_AREAS = [
-  { name: 'North Mountain Village Core (85029)', desc: 'Near W Sahuaro Dr, I-17, and Metrocenter area' },
-  { name: 'Sunnyslope & Mountain View', desc: 'Historic residential properties with aging copper and galvanized water lines' },
-  { name: 'Shaw Butte & North Mountain Preserve', desc: 'Hillside properties requiring non-invasive acoustic and electronic leak locating' },
-  { name: 'Metrocenter & Castles N\' Coasters Corridor', desc: 'Commercial and multi-family residential water & gas meter inspections' },
-  { name: 'Cactus & Thunderbird Corridors', desc: 'Suburban ranch homes prone to hidden foundation slab leaks' },
-  { name: 'Adjacent North Phoenix & Glendale Communities', desc: 'Deer Valley, Moon Valley, Paradise Valley Village, and Glendale' }
+  { name: 'North Mountain Village Core (85029)', desc: 'W Sahuaro Dr, Metrocenter, Peoria Ave & I-17 corridor' },
+  { name: 'Moon Valley & Lookout Mountain (85022)', desc: 'Residential ranch tracts, hillside properties & desert slab foundations' },
+  { name: 'Bell Road & Deer Valley (85023)', desc: 'North Phoenix single-family residences, retail centers & underground mains' },
+  { name: 'West Greenway & Turf Paradise (85053)', desc: 'Thunderbird corridor subdivisions, multi-unit complexes & gas lines' }
 ];
 
 export const TESTIMONIALS = [
   {
     id: '1',
     name: 'Carlos M.',
-    location: 'North Mountain Village (W Sahuaro Dr area)',
+    location: 'North Mountain Village (85029)',
     service: 'Underground Slab Water Leak',
     rating: 5,
     date: '2 weeks ago',
@@ -58,16 +56,16 @@ export const TESTIMONIALS = [
   {
     id: '2',
     name: 'Elena R.',
-    location: 'Sunnyslope, North Mountain',
+    location: 'Moon Valley (85022)',
     service: 'Emergency Gas Odor Detection',
     rating: 5,
     date: '1 month ago',
-    text: 'Smelled a faint sulfur odor near our stove and water heater. The referral service immediately dispatched a certified gas leak specialist who used an electronic sniffer to locate a loose fitting behind the kitchen wall. Fast, professional, and gave us peace of mind.'
+    text: 'Smelled a faint sulfur odor near our stove and water heater in Moon Valley. The referral service immediately dispatched a certified gas leak specialist who used an electronic sniffer to locate a loose fitting behind the kitchen wall. Fast, professional, and gave us peace of mind.'
   },
   {
     id: '3',
     name: 'Marcus T.',
-    location: 'Metrocenter Area / 85029',
+    location: 'Bell Road & Deer Valley (85023)',
     service: 'Hidden Irrigation & Main Line Leak',
     rating: 5,
     date: '3 weeks ago',
@@ -77,8 +75,8 @@ export const TESTIMONIALS = [
 
 export const FAQ_ITEMS = [
   {
-    question: 'How fast can a leak detection specialist arrive at my North Mountain Village home?',
-    answer: 'Contractors in our North Mountain Village network provide priority emergency response, often arriving within 45 to 90 minutes across the 85029 zip code and surrounding Phoenix metro areas, 24 hours a day, 7 days a week.'
+    question: 'How fast can a leak detection specialist arrive at my North Mountain / Phoenix home?',
+    answer: 'Contractors in our network provide priority emergency response, often arriving within 45 to 75 minutes across zip codes 85029, 85022, 85023, and 85053 and surrounding Phoenix areas, 24 hours a day, 7 days a week.'
   },
   {
     question: 'What is the role of Leak Detection Pro?',

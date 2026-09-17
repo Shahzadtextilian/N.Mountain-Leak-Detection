@@ -107,7 +107,7 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onNavigate
             <p><strong>Privacy Office:</strong> Leak Detection Pro</p>
             <p><strong>Address:</strong> {BUSINESS_INFO.fullAddress}</p>
             <p><strong>Phone:</strong> {BUSINESS_INFO.phoneFormatted}</p>
-            <p><strong>Service Area:</strong> North Mountain Village, Phoenix, Maricopa County, Arizona</p>
+            <p><strong>Service Area:</strong> North Mountain Village &amp; North Phoenix (Serving Zip Codes: 85029, 85022, 85023, 85053), Maricopa County, Arizona</p>
           </div>
         </div>
       </section>

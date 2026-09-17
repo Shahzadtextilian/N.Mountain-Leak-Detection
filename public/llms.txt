@@ -1,6 +1,6 @@
 # Leak Detection Pro — North Mountain Village, Phoenix AZ
 
-> 24/7 Water and Gas Leak Detection Referral & Dispatch Network serving North Mountain Village (85029) and the greater Phoenix metropolitan area. Connects property owners with pre-screened, licensed, and insured plumbing and leak detection contractors utilizing non-invasive acoustic, thermal, and tracer diagnostic technology.
+> 24/7 Water and Gas Leak Detection Referral & Dispatch Network serving North Mountain Village and North Phoenix across zip codes 85029, 85022, 85023, and 85053. Connects property owners with pre-screened, licensed, and insured plumbing and leak detection contractors utilizing non-invasive acoustic, thermal, and tracer diagnostic technology.
 
 ## Overview
 - **Service Name:** Leak Detection Pro
@@ -9,7 +9,7 @@
 - **Website:** https://cityheightsleakdetectionpro.com/
 - **Availability:** 24 Hours a Day, 7 Days a Week, 365 Days a Year
 - **Service Type:** Pre-screened Contractor Referral & Lead Generation Network
-- **Target Zip Codes:** 85029, 85021, 85023, 85051, 85053, 85020, 85022
+- **Target Zip Codes:** 85029, 85022, 85023, 85053
 
 ## Primary Services
 
@@ -31,12 +31,11 @@
 3. **Helium / Hydrogen Tracer Gas:** Injected into pressurized dry lines to escape through minute cracks and be identified by sniffing probes at parts-per-million levels.
 4. **Miniature Pipe Inspection Cameras:** High-definition video inspection inside drainage and sewer conduits.
 
-## Service Areas in North Mountain Village & Metro Phoenix
-- **North Mountain Village Core (85029):** W Sahuaro Dr corridor, Peoria Ave, Metrocenter, and surrounding residential communities.
-- **Shaw Butte & Lookout Mountain:** Desert foothill properties vulnerable to caliche shifting and high water pressure wear.
-- **Sunnyslope (85020 / 85021):** Classic Mid-Century and ranch-style residential plumbing configurations.
-- **Deer Valley & Moon Valley (85023 / 85022):** Established single-family residential tracts and commercial business parks.
-- **Surrounding Phoenix Communities:** Glendale, North Phoenix, Paradise Valley, and Peoria borders.
+## Service Areas in North Mountain Village & North Phoenix
+- **85029 (North Mountain Village Core):** W Sahuaro Dr corridor, W Peoria Ave, Metrocenter, and surrounding residential communities.
+- **85022 (Moon Valley & Lookout Mountain):** Established single-family desert ranch homes, foothill parcels, and copper slab plumbing.
+- **85023 (Bell Road & Deer Valley):** Commercial strips, suburban subdivisions, and underground water main supply networks.
+- **85053 (West Greenway & Turf Paradise):** Thunderbird corridor residential communities, townhomes, and gas line infrastructure.
 
 ## Emergency Gas Safety Protocol
 If you smell rotten eggs (mercantan sulfur odor) or suspect an active natural gas leak:

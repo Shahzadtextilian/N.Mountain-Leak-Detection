@@ -26,7 +26,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenQ
           <div className="flex items-center gap-1.5 text-center sm:text-left">
             <MapPin className="w-3.5 h-3.5 text-red-400 shrink-0" />
             <span className="text-slate-300">
-              Serving North Mountain Village, Phoenix (85029) &bull; 2810 W Sahuaro Dr
+              Serving North Mountain Village &amp; North Phoenix (Zips: 85029, 85022, 85023, 85053) &bull; 2810 W Sahuaro Dr
             </span>
           </div>
 
@@ -195,7 +195,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenQ
           <div className="p-3 bg-blue-50/60 rounded-xl border border-blue-100 text-xs text-blue-900 mb-3">
             <p className="font-semibold text-blue-950">North Mountain Village Lead Matching Service</p>
             <p className="text-blue-800 mt-0.5">
-              2810 W Sahuaro Dr, Phoenix, AZ 85029 • Free dispatch estimate
+              2810 W Sahuaro Dr, Phoenix, AZ (Serving 85029, 85022, 85023, 85053) • Free dispatch estimate
             </p>
           </div>
 

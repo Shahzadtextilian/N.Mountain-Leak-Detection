@@ -56,7 +56,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenQuote }) =
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                 </span>
                 <span className="font-semibold text-cyan-300 flex items-center gap-1">
-                  <MapPin className="w-3.5 h-3.5 text-red-400" /> North Mountain Village, Phoenix • 85029
+                  <MapPin className="w-3.5 h-3.5 text-red-400" /> North Mountain Village &bull; Zips: 85029, 85022, 85023, 85053
                 </span>
                 <span className="text-slate-600 hidden sm:inline">&bull;</span>
                 <span className="text-slate-300 hidden sm:inline">2810 W Sahuaro Dr Corridor</span>
@@ -75,7 +75,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenQuote }) =
               </h1>
 
               <p className="text-sm sm:text-base text-slate-300 max-w-xl leading-relaxed">
-                Suffering from an unexplained high water bill, warm flooring, or dangerous sulfur gas odor? <strong>Leak Detection Pro</strong> connects North Mountain Village (85029) homeowners and businesses with licensed, insured leak detection contractors equipped with acoustic ground probes and thermal FLIR cameras.
+                Suffering from an unexplained high water bill, warm flooring, or dangerous sulfur gas odor? <strong>Leak Detection Pro</strong> connects property owners across <strong>85029, 85022, 85023, and 85053</strong> with licensed, insured leak detection contractors equipped with acoustic ground probes and thermal FLIR cameras.
               </p>
 
               {/* Quick Trust Badges */}
@@ -474,7 +474,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenQuote }) =
               Common Signs You Need Emergency Leak Detection
             </h3>
             <p className="text-sm text-slate-300 mt-2">
-              Don't wait for visible ceiling collapse or dangerous gas accumulation. Look for these early telltale signs around your 85029 property:
+              Don't wait for visible ceiling collapse or dangerous gas accumulation. Look for these early telltale signs around your 85029, 85022, 85023, or 85053 property:
             </p>
           </div>
 
@@ -576,10 +576,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenQuote }) =
                 Local Presence & Community
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-                Serving All Neighborhoods in North Mountain Village &amp; Phoenix (85029)
+                Serving Zip Codes 85029, 85022, 85023 &amp; 85053 in North Mountain Village &amp; Phoenix
               </h2>
               <p className="text-sm text-slate-600 leading-relaxed">
-                Leak Detection Pro operates right from <strong>2810 W Sahuaro Dr, Phoenix, AZ 85029</strong>. Our dispatch network covers the residential corridors along W Peoria Ave, N 28th Ave, N 19th Ave, and W Dunlap Ave. We know the unique plumbing challenges of mid-century desert homes, tile slab foundations, and multi-unit residential communities prevalent in North Mountain Village.
+                Leak Detection Pro operates right from <strong>2810 W Sahuaro Dr, Phoenix, AZ 85029</strong>. Our dispatch network actively covers residential and commercial properties across <strong>85029, 85022, 85023, and 85053</strong>, serving key corridors including W Peoria Ave, Bell Rd, Thunderbird Rd, and W Greenway Rd. We know the unique plumbing challenges of mid-century desert homes, caliche soil shifts, tile slab foundations, and multi-unit residential communities prevalent in North Phoenix.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
@@ -607,8 +607,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenQuote }) =
               {/* Stylized Local Map Representation */}
               <div className="bg-slate-950 border border-slate-800 rounded-xl p-4 text-xs space-y-3 mb-5">
                 <div className="flex justify-between items-center pb-2 border-b border-slate-800">
-                  <span className="text-slate-400">Primary Service Zip:</span>
-                  <span className="font-bold text-emerald-400">85029 (North Mountain Village Core)</span>
+                  <span className="text-slate-400">Target Service Zips:</span>
+                  <span className="font-bold text-emerald-400">85029, 85022, 85023, 85053</span>
                 </div>
                 <div className="flex justify-between items-center pb-2 border-b border-slate-800">
                   <span className="text-slate-400">Major Cross Streets:</span>
@@ -651,7 +651,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenQuote }) =
             Real Phoenix Area Feedback
           </span>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2 tracking-tight">
-            Trusted by Your Neighbors in 85029
+            Trusted by Your Neighbors in 85029, 85022, 85023 &amp; 85053
           </h2>
           <p className="text-sm text-slate-600 mt-1">
             See how our local leak specialists helped Phoenix residents with rapid leak solutions.

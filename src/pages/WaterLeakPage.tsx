@@ -75,7 +75,7 @@ export const WaterLeakPage: React.FC<WaterLeakPageProps> = ({ onNavigate, onOpen
               </h1>
 
               <p className="text-base text-slate-200 max-w-2xl leading-relaxed">
-                Pinpoint pressurized water leaks hidden deep under concrete foundation slabs, behind finished drywall, or along underground yard supply lines. Serving residential properties and multi-family units across 85029 and Maricopa County.
+                Pinpoint pressurized water leaks hidden deep under concrete foundation slabs, behind finished drywall, or along underground yard supply lines. Serving residential properties and multi-family units across 85029, 85022, 85023, and 85053 in Maricopa County.
               </p>
 
               <div className="flex flex-wrap items-center gap-3 pt-2">

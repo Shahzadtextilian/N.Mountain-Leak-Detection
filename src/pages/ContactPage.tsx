@@ -139,13 +139,13 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate, onOpenQuot
                   <span>North Mountain Village Navigation</span>
                 </div>
                 <span className="text-[11px] bg-blue-900/60 text-blue-300 px-2.5 py-1 rounded-md border border-blue-700">
-                  Zip 85029
+                  Zips 85029, 85022, 85023, 85053
                 </span>
               </div>
 
               <div className="bg-slate-950 border border-slate-800 rounded-xl p-4 text-xs space-y-3">
                 <p className="text-slate-300 leading-relaxed">
-                  Our network dispatch coordination center is based at <strong>{BUSINESS_INFO.fullAddress}</strong>, strategically positioned near the Interstate 17 Black Canyon corridor and Peoria Ave. This central position enables partner plumbing contractors to reach North Mountain Village, Metrocenter, Sunnyslope, Deer Valley, and Greater Phoenix within minutes.
+                  Our network dispatch coordination center is based at <strong>{BUSINESS_INFO.fullAddress}</strong>, strategically positioned near the Interstate 17 Black Canyon corridor and Peoria Ave. This central position enables partner plumbing contractors to reach zip codes <strong>85029, 85022, 85023, and 85053</strong> throughout North Mountain Village, Metrocenter, Moon Valley, Deer Valley, and Greater Phoenix within minutes.
                 </p>
                 <div className="pt-2 border-t border-slate-800 grid grid-cols-2 gap-2 text-[11px] text-slate-400">
                   <div>• Peoria Ave (2 mins)</div>
