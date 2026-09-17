@@ -50,7 +50,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenQ
 
       {/* Main Navbar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between min-h-[72px] lg:min-h-[76px] py-2 gap-3 lg:gap-6">
+        <div className="flex items-center justify-between min-h-[68px] lg:min-h-[72px] py-2 gap-4">
           {/* Brand Logo */}
           <button
             onClick={() => handleNav('home')}
@@ -65,7 +65,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenQ
                 <span className="text-lg sm:text-xl xl:text-2xl font-extrabold tracking-tight text-slate-900 whitespace-nowrap">
                   Leak Detection <span className="text-blue-600">Pro</span>
                 </span>
-                <span className="bg-blue-50/80 text-blue-700 text-[10px] font-semibold px-2 py-0.5 rounded-full border border-blue-200/80 whitespace-nowrap hidden xl:inline-flex">
+                <span className="bg-blue-50/80 text-blue-700 text-[10px] font-semibold px-2 py-0.5 rounded-full border border-blue-200/80 whitespace-nowrap hidden 2xl:inline-flex">
                   North Mountain Village, AZ
                 </span>
               </div>
@@ -76,10 +76,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenQ
           </button>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2 shrink">
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-2 shrink-0">
             <button
               onClick={() => handleNav('home')}
-              className={`px-2.5 xl:px-3 py-2 rounded-lg text-xs xl:text-sm font-medium transition-colors whitespace-nowrap ${
+              className={`px-3 py-2 rounded-lg text-xs xl:text-sm font-medium transition-colors whitespace-nowrap ${
                 currentPage === 'home'
                   ? 'bg-blue-50 text-blue-700 font-semibold'
                   : 'text-slate-700 hover:text-blue-600 hover:bg-slate-50'
@@ -91,7 +91,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenQ
 
             <button
               onClick={() => handleNav('water-leak')}
-              className={`px-2.5 xl:px-3 py-2 rounded-lg text-xs xl:text-sm font-medium flex items-center gap-1.5 transition-colors whitespace-nowrap ${
+              className={`px-3 py-2 rounded-lg text-xs xl:text-sm font-medium flex items-center gap-1.5 transition-colors whitespace-nowrap ${
                 currentPage === 'water-leak'
                   ? 'bg-blue-50 text-blue-700 font-semibold'
                   : 'text-slate-700 hover:text-blue-600 hover:bg-slate-50'
@@ -99,15 +99,12 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenQ
               id="nav-link-water"
             >
               <Droplets className="w-3.5 h-3.5 xl:w-4 xl:h-4 text-blue-500 shrink-0" />
-              <span>
-                <span className="xl:hidden">Water Leaks</span>
-                <span className="hidden xl:inline">Water Leak Detection</span>
-              </span>
+              <span>Water Leaks</span>
             </button>
 
             <button
               onClick={() => handleNav('gas-leak')}
-              className={`px-2.5 xl:px-3 py-2 rounded-lg text-xs xl:text-sm font-medium flex items-center gap-1.5 transition-colors whitespace-nowrap ${
+              className={`px-3 py-2 rounded-lg text-xs xl:text-sm font-medium flex items-center gap-1.5 transition-colors whitespace-nowrap ${
                 currentPage === 'gas-leak'
                   ? 'bg-amber-50 text-amber-800 font-semibold'
                   : 'text-slate-700 hover:text-amber-700 hover:bg-slate-50'
@@ -115,15 +112,12 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenQ
               id="nav-link-gas"
             >
               <Flame className="w-3.5 h-3.5 xl:w-4 xl:h-4 text-amber-500 shrink-0" />
-              <span>
-                <span className="xl:hidden">Gas Leaks</span>
-                <span className="hidden xl:inline">Gas Leak Detection</span>
-              </span>
+              <span>Gas Leaks</span>
             </button>
 
             <button
               onClick={() => handleNav('about')}
-              className={`px-2.5 xl:px-3 py-2 rounded-lg text-xs xl:text-sm font-medium transition-colors whitespace-nowrap ${
+              className={`px-3 py-2 rounded-lg text-xs xl:text-sm font-medium transition-colors whitespace-nowrap ${
                 currentPage === 'about'
                   ? 'bg-blue-50 text-blue-700 font-semibold'
                   : 'text-slate-700 hover:text-blue-600 hover:bg-slate-50'
@@ -135,7 +129,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenQ
 
             <button
               onClick={() => handleNav('contact')}
-              className={`px-2.5 xl:px-3 py-2 rounded-lg text-xs xl:text-sm font-medium transition-colors whitespace-nowrap ${
+              className={`px-3 py-2 rounded-lg text-xs xl:text-sm font-medium transition-colors whitespace-nowrap ${
                 currentPage === 'contact'
                   ? 'bg-blue-50 text-blue-700 font-semibold'
                   : 'text-slate-700 hover:text-blue-600 hover:bg-slate-50'
@@ -147,7 +141,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenQ
           </nav>
 
           {/* Desktop Right Phone CTA */}
-          <div className="hidden sm:flex items-center gap-2.5 xl:gap-3 shrink-0 ml-auto lg:ml-0">
+          <div className="hidden sm:flex items-center gap-2 xl:gap-3 shrink-0">
             <a
               href={BUSINESS_INFO.telLink}
               className="flex items-center gap-2 xl:gap-2.5 bg-red-600 hover:bg-red-700 text-white px-3.5 xl:px-4 py-2 rounded-xl font-bold shadow-md shadow-red-600/25 transition-all hover:scale-102 active:scale-98 shrink-0 whitespace-nowrap"
