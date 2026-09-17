@@ -4,4 +4,4 @@ Allow: /
 Disallow: /google787a08286a6466cd.html
 
 # Sitemap
-Sitemap: https://cityheightsleakdetectionpro.com/sitemap.xml
+Sitemap: https://northmountainleakdetection.vercel.app/sitemap.xml
