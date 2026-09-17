@@ -61,16 +61,11 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, onOpenQ
               <Droplets className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
             <div className="min-w-0">
-              <div className="flex items-center gap-2">
-                <span className="text-lg sm:text-xl xl:text-2xl font-extrabold tracking-tight text-slate-900 whitespace-nowrap">
-                  Leak Detection <span className="text-blue-600">Pro</span>
-                </span>
-                <span className="bg-blue-50/80 text-blue-700 text-[10px] font-semibold px-2 py-0.5 rounded-full border border-blue-200/80 whitespace-nowrap hidden 2xl:inline-flex">
-                  North Mountain Village, AZ
-                </span>
-              </div>
-              <p className="text-[11px] text-slate-500 font-medium hidden 2xl:block whitespace-nowrap mt-0.5">
-                Phoenix Water &amp; Gas Leak Detection &amp; Repair
+              <span className="text-lg sm:text-xl xl:text-2xl font-extrabold tracking-tight text-slate-900 whitespace-nowrap block leading-tight">
+                Leak Detection <span className="text-blue-600">Pro</span>
+              </span>
+              <p className="text-[10px] sm:text-xs font-semibold text-slate-600 tracking-tight whitespace-nowrap mt-0.5">
+                North Mountain Village, Phoenix, AZ
               </p>
             </div>
           </button>
