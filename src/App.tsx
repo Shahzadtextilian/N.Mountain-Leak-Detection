@@ -31,18 +31,70 @@ export default function App() {
     return () => window.removeEventListener('hashchange', handleHash);
   }, []);
 
-  // Synchronize concise, high-ranking document titles (under 60 characters)
+  // Synchronize concise, high-ranking document titles & meta descriptions as per Google Guidelines
   useEffect(() => {
-    const titles: Record<Page, string> = {
-      'home': 'Leak Detection Pro | North Mountain Village, Phoenix AZ',
-      'water-leak': 'Water Leak Detection | North Mountain Village, Phoenix',
-      'gas-leak': 'Gas Leak Detection | North Mountain Village, Phoenix',
-      'about': 'About Us | Leak Detection Pro Phoenix AZ',
-      'contact': 'Contact Us | Leak Detection Pro Phoenix AZ',
-      'privacy': 'Privacy Policy | Leak Detection Pro',
-      'disclaimer': 'Legal Disclaimers | Leak Detection Pro'
+    const seoData: Record<Page, { title: string; description: string; canonical: string }> = {
+      'home': {
+        title: 'Leak Detection Pro | North Mountain Village, Phoenix AZ',
+        description: '24/7 water and gas leak detection in North Mountain Village, Phoenix AZ (85029, 85022, 85023, 85053). Certified slab leak & line specialists. Call (602) 836-3562.',
+        canonical: 'https://northmountainleakdetection.vercel.app/'
+      },
+      'water-leak': {
+        title: 'Water Leak Detection | North Mountain Village, Phoenix',
+        description: 'Emergency slab leak detection & acoustic water pipe locating in North Mountain Village Phoenix AZ. Non-invasive diagnostics. Call (602) 836-3562 for 24/7 service.',
+        canonical: 'https://northmountainleakdetection.vercel.app/#water-leak'
+      },
+      'gas-leak': {
+        title: 'Gas Leak Detection | North Mountain Village, Phoenix',
+        description: '24/7 emergency natural gas leak detection & pipe pressure testing in North Mountain Village Phoenix. Fast response & safety shutoff. Call (602) 836-3562.',
+        canonical: 'https://northmountainleakdetection.vercel.app/#gas-leak'
+      },
+      'about': {
+        title: 'About Us | Leak Detection Pro Phoenix AZ',
+        description: 'Learn about Leak Detection Pro in North Mountain Village, Phoenix AZ. Connecting property owners with licensed leak detection specialists. Call (602) 836-3562.',
+        canonical: 'https://northmountainleakdetection.vercel.app/#about'
+      },
+      'contact': {
+        title: 'Contact Us | Leak Detection Pro Phoenix AZ',
+        description: 'Contact Leak Detection Pro at 2810 W Sahuaro Dr, Phoenix AZ 85029. 24/7 dispatch across North Mountain Village zip codes 85029, 85022, 85023. Call (602) 836-3562.',
+        canonical: 'https://northmountainleakdetection.vercel.app/#contact'
+      },
+      'privacy': {
+        title: 'Privacy Policy | Leak Detection Pro',
+        description: 'Review the privacy policy for Leak Detection Pro. Learn how we handle consumer inquiries, contact details, and quote requests in Phoenix, AZ.',
+        canonical: 'https://northmountainleakdetection.vercel.app/#privacy'
+      },
+      'disclaimer': {
+        title: 'Legal Disclaimers | Leak Detection Pro',
+        description: 'Important legal disclaimers, licensing disclosures, and terms for Leak Detection Pro contractor referral services in Phoenix and Maricopa County.',
+        canonical: 'https://northmountainleakdetection.vercel.app/#disclaimer'
+      }
     };
-    document.title = titles[currentPage] || titles.home;
+
+    const currentSeo = seoData[currentPage] || seoData.home;
+    document.title = currentSeo.title;
+
+    // Update meta description
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', currentSeo.description);
+    }
+
+    // Update OpenGraph tags
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute('content', currentSeo.title);
+
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) ogDesc.setAttribute('content', currentSeo.description);
+
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) ogUrl.setAttribute('content', currentSeo.canonical);
+
+    // Update canonical link
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (canonicalLink) {
+      canonicalLink.setAttribute('href', currentSeo.canonical);
+    }
   }, [currentPage]);
 
   const handleNavigate = (page: Page) => {
