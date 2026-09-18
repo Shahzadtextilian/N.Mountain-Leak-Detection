@@ -9,7 +9,6 @@ import {
   CheckCircle2,
   Users,
   Award,
-  ShieldAlert,
   ArrowRight
 } from 'lucide-react';
 import { Page } from '../types';
@@ -78,41 +77,11 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onOpenQuote })
         </div>
       </section>
 
-      {/* Transparent Business Model & Mandatory Consumer Disclosure */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-amber-50/95 border-2 border-amber-300 rounded-2xl p-6 sm:p-8 shadow-xs">
-          <div className="flex items-start gap-4">
-            <div className="p-2.5 rounded-xl bg-amber-200/70 text-amber-800 shrink-0 mt-0.5">
-              <ShieldAlert className="w-7 h-7" />
-            </div>
-            <div className="space-y-3">
-              <h2 className="text-lg sm:text-xl font-bold text-amber-950">
-                Mandatory Consumer Disclosure &amp; Lead Generation Disclaimer
-              </h2>
-              <p className="text-xs sm:text-sm text-amber-900 leading-relaxed">
-                <strong>Leak Detection Pro is a referral advertising and lead generation service, NOT a licensed plumbing or leak detection contractor.</strong> We connect homeowners and business clients with independent, licensed, and insured plumbing and leak detection specialists operating in North Mountain Village, Phoenix, and Maricopa County. All diagnostic evaluations, inspections, repairs, warranties, and pricing are handled directly and independently by the third-party contractor assigned to your request. We do not provide physical labor or direct contracting services.
-              </p>
-              <div className="p-3 bg-amber-100/90 rounded-xl border border-amber-300/80 text-xs font-semibold text-amber-950">
-                <strong>Referral Notice:</strong> We connect North Mountain Village and Phoenix residents with independent ROC-licensed contractors. We are not direct service providers.
-              </div>
-              <div className="pt-1">
-                <button
-                  onClick={() => onNavigate('disclaimer')}
-                  className="text-xs font-semibold text-amber-900 hover:text-amber-700 underline underline-offset-4"
-                >
-                  Read our full Referral Network Terms &amp; Contractor Match Disclosure &rarr;
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Why Choose Our Network */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-            Why North Mountain Village Property Owners Trust Our Referral Network
+            Why North Mountain Village Property Owners Trust Our Network
           </h2>
           <p className="text-sm text-slate-600 mt-2">
             Instead of calling ten different plumbing companies only to be put on voicemail, our network provides single-call dispatch.
