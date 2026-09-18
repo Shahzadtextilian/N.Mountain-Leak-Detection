@@ -22,6 +22,7 @@ import {
 import { Page } from '../types';
 import { BUSINESS_INFO, FAQ_ITEMS, TESTIMONIALS, CITY_HEIGHTS_AREAS } from '../data/content';
 import { LeadCaptureForm } from '../components/LeadCaptureForm';
+import { GoogleMapEmbed } from '../components/GoogleMapEmbed';
 import { APP_IMAGES } from '../data/images';
 
 interface HomePageProps {
@@ -603,6 +604,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenQuote }) =
                   <p className="text-xs text-slate-400">{BUSINESS_INFO.fullAddress}</p>
                 </div>
               </div>
+
+              {/* Embedded Google Map */}
+              <GoogleMapEmbed height="h-52 sm:h-60" className="border-slate-800 mb-4 shadow-inner" />
 
               {/* Stylized Local Map Representation */}
               <div className="bg-slate-950 border border-slate-800 rounded-xl p-4 text-xs space-y-3 mb-5">

@@ -14,6 +14,7 @@ import {
 import { Page } from '../types';
 import { BUSINESS_INFO, CITY_HEIGHTS_AREAS } from '../data/content';
 import { LeadCaptureForm } from '../components/LeadCaptureForm';
+import { GoogleMapEmbed } from '../components/GoogleMapEmbed';
 import { APP_IMAGES } from '../data/images';
 
 interface ContactPageProps {
@@ -142,6 +143,9 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate, onOpenQuot
                   Zips 85029, 85022, 85023, 85053
                 </span>
               </div>
+
+              {/* Embedded Google Map */}
+              <GoogleMapEmbed height="h-64 sm:h-72" className="border-slate-700 shadow-md" />
 
               <div className="bg-slate-950 border border-slate-800 rounded-xl p-4 text-xs space-y-3">
                 <p className="text-slate-300 leading-relaxed">
