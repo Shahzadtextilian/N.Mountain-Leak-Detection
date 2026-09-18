@@ -43,8 +43,8 @@ export const LeadSmartEmbed: React.FC<LeadSmartEmbedProps> = ({
             </span>
             <div>
               <h3 className="text-base sm:text-lg font-bold text-white flex items-center gap-2">
-                Instant Leak Detection Matching
-                <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                Leak Detection Pro Instant Match
+                <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-blue-500/30 text-blue-200 border border-blue-400/40">
                   Live Dispatch
                 </span>
               </h3>
@@ -74,31 +74,31 @@ export const LeadSmartEmbed: React.FC<LeadSmartEmbedProps> = ({
           No Obligation Estimates
         </span>
         <span className="inline-flex items-center gap-1">
-          <Sparkles className="w-4 h-4 text-amber-500 shrink-0" />
+          <Sparkles className="w-4 h-4 text-blue-600 shrink-0" />
           Serving Zips: 85029, 85022, 85023, 85053
         </span>
       </div>
 
-      {/* Live LeadSmart Embedded Funnel */}
+      {/* Live Embedded Funnel */}
       <div className="p-3 sm:p-4 bg-slate-100/50">
         <div className="relative min-h-[480px] w-full rounded-xl overflow-hidden bg-white shadow-inner border border-slate-200">
           {!iframeLoaded && (
             <div className="absolute inset-0 flex flex-col items-center justify-center bg-white z-10 p-6 text-center">
               <div className="w-10 h-10 border-3 border-blue-600 border-t-transparent rounded-full animate-spin mb-3"></div>
               <p className="text-sm font-semibold text-slate-700">Connecting to North Mountain Village dispatch network...</p>
-              <p className="text-xs text-slate-500 mt-1">Direct LeadSmart contractor matching</p>
+              <p className="text-xs text-slate-500 mt-1">Direct Leak Detection Pro contractor matching</p>
             </div>
           )}
           <iframe
             src={leadsmartUrl}
-            title="LeadSmart Leak Detection Contractor Quote Form"
+            title="Leak Detection Pro Contractor Quote Form"
             className="w-full h-[540px] border-0"
             onLoad={() => setIframeLoaded(true)}
             allow="geolocation"
           />
         </div>
 
-        {/* Alternative Widget Hooks for LeadSmart Script Plugins */}
+        {/* Alternative Widget Hooks for Script Plugins */}
         <div className="po-request-quotes-box hidden" data-category={category} data-buttons="btn-success" data-width="100%"></div>
       </div>
 
