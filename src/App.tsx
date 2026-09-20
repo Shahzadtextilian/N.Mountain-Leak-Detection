@@ -17,18 +17,47 @@ export default function App() {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [quoteServiceType, setQuoteServiceType] = useState<'water' | 'gas' | 'both' | 'inspection'>('water');
 
-  // Handle URL hash changes if present
+  const getPathForPage = (page: Page): string => {
+    return page === 'home' ? '/' : `/${page}`;
+  };
+
+  const getPageFromLocation = (): Page => {
+    const pathname = window.location.pathname.replace(/^\/+|\/+$/g, '');
+    const validPages: Page[] = ['home', 'water-leak', 'gas-leak', 'about', 'contact', 'privacy', 'disclaimer'];
+    
+    if (validPages.includes(pathname as Page)) {
+      return pathname as Page;
+    }
+
+    // Support legacy incoming hash links and normalize them
+    const hash = window.location.hash.replace(/^#+/, '');
+    if (validPages.includes(hash as Page)) {
+      return hash as Page;
+    }
+
+    return 'home';
+  };
+
+  // Handle URL changes cleanly via HTML5 History without hash-based redirect loops
   useEffect(() => {
-    const handleHash = () => {
-      const hash = window.location.hash.replace('#', '') as Page;
-      if (['home', 'water-leak', 'gas-leak', 'about', 'contact', 'privacy', 'disclaimer'].includes(hash)) {
-        setCurrentPage(hash);
+    const handleLocationChange = () => {
+      const page = getPageFromLocation();
+      setCurrentPage(page);
+
+      // If user landed via legacy hash link (e.g. /#water-leak), normalize URL cleanly without reload
+      if (window.location.hash) {
+        const cleanPath = getPathForPage(page);
+        window.history.replaceState(null, '', cleanPath);
       }
     };
 
-    handleHash();
-    window.addEventListener('hashchange', handleHash);
-    return () => window.removeEventListener('hashchange', handleHash);
+    handleLocationChange();
+    window.addEventListener('popstate', handleLocationChange);
+    window.addEventListener('hashchange', handleLocationChange);
+    return () => {
+      window.removeEventListener('popstate', handleLocationChange);
+      window.removeEventListener('hashchange', handleLocationChange);
+    };
   }, []);
 
   // Synchronize concise, high-ranking document titles & meta descriptions as per Google Guidelines
@@ -42,32 +71,32 @@ export default function App() {
       'water-leak': {
         title: 'Water Leak Detection | North Mountain Village, Phoenix',
         description: 'Emergency slab leak detection & acoustic water pipe locating in North Mountain Village Phoenix AZ. Non-invasive diagnostics. Call (602) 836-3562 for 24/7 service.',
-        canonical: 'https://northmountainleakdetection.vercel.app/#water-leak'
+        canonical: 'https://northmountainleakdetection.vercel.app/water-leak'
       },
       'gas-leak': {
         title: 'Gas Leak Detection | North Mountain Village, Phoenix',
         description: '24/7 emergency natural gas leak detection & pipe pressure testing in North Mountain Village Phoenix. Fast response & safety shutoff. Call (602) 836-3562.',
-        canonical: 'https://northmountainleakdetection.vercel.app/#gas-leak'
+        canonical: 'https://northmountainleakdetection.vercel.app/gas-leak'
       },
       'about': {
         title: 'About Us | Leak Detection Pro Phoenix AZ',
         description: 'Learn about Leak Detection Pro in North Mountain Village, Phoenix AZ. Connecting property owners with licensed leak detection specialists. Call (602) 836-3562.',
-        canonical: 'https://northmountainleakdetection.vercel.app/#about'
+        canonical: 'https://northmountainleakdetection.vercel.app/about'
       },
       'contact': {
         title: 'Contact Us | Leak Detection Pro Phoenix AZ',
         description: 'Contact Leak Detection Pro at 2810 W Sahuaro Dr, Phoenix AZ 85029. 24/7 dispatch across North Mountain Village zip codes 85029, 85022, 85023. Call (602) 836-3562.',
-        canonical: 'https://northmountainleakdetection.vercel.app/#contact'
+        canonical: 'https://northmountainleakdetection.vercel.app/contact'
       },
       'privacy': {
         title: 'Privacy Policy | Leak Detection Pro',
         description: 'Review the privacy policy for Leak Detection Pro. Learn how we handle consumer inquiries, contact details, and quote requests in Phoenix, AZ.',
-        canonical: 'https://northmountainleakdetection.vercel.app/#privacy'
+        canonical: 'https://northmountainleakdetection.vercel.app/privacy'
       },
       'disclaimer': {
         title: 'Legal Disclaimers | Leak Detection Pro',
         description: 'Important legal disclaimers, licensing disclosures, and terms for Leak Detection Pro contractor referral services in Phoenix and Maricopa County.',
-        canonical: 'https://northmountainleakdetection.vercel.app/#disclaimer'
+        canonical: 'https://northmountainleakdetection.vercel.app/disclaimer'
       }
     };
 
@@ -99,7 +128,10 @@ export default function App() {
 
   const handleNavigate = (page: Page) => {
     setCurrentPage(page);
-    window.location.hash = page === 'home' ? '' : page;
+    const newPath = getPathForPage(page);
+    if (window.location.pathname !== newPath) {
+      window.history.pushState(null, '', newPath);
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
