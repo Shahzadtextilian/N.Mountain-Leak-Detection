@@ -1,7 +1,6 @@
 # robots.txt for Leak Detection Pro - North Mountain Village, Phoenix AZ
 User-agent: *
 Allow: /
-Disallow: /google787a08286a6466cd.html
 
 # Sitemap
 Sitemap: https://northmountainleakdetection.vercel.app/sitemap.xml
