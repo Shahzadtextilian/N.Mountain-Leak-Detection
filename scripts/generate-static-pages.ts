@@ -4,17 +4,30 @@ import path from 'path';
 interface PageMeta {
   title: string;
   description: string;
-  canonical: string;
+  path: string;
   h1: string;
   h2: string;
   lead: string;
+}
+
+const defaultBaseUrl = 'https://northmountainleakdetection.vercel.app';
+
+// Detect custom domain from public/CNAME or environment
+let activeBaseUrl = defaultBaseUrl;
+const cnamePath = path.resolve(process.cwd(), 'public', 'CNAME');
+if (fs.existsSync(cnamePath)) {
+  const cnameContent = fs.readFileSync(cnamePath, 'utf8').trim();
+  if (cnameContent && !cnameContent.startsWith('#')) {
+    activeBaseUrl = `https://${cnameContent.replace(/^https?:\/\//, '').replace(/\/+$/, '')}`;
+    console.log(`Detected custom domain from CNAME: ${activeBaseUrl}`);
+  }
 }
 
 const pages: Record<string, PageMeta> = {
   'water-leak': {
     title: 'Water Leak Detection | North Mountain Village, Phoenix',
     description: 'Emergency slab leak detection & acoustic water pipe locating in North Mountain Village Phoenix AZ. Non-invasive diagnostics. Call (602) 836-3562 for 24/7 service.',
-    canonical: 'https://northmountainleakdetection.vercel.app/water-leak',
+    path: '/water-leak',
     h1: 'Water & Slab Leak Detection in North Mountain Village, Phoenix',
     h2: 'Non-Invasive Acoustic & Thermal Water Pipe Locating',
     lead: '24/7 Professional emergency slab leak locating, acoustic ground microphone testing, and water bill spike diagnostics across zip codes 85029, 85022, 85023, and 85053.'
@@ -22,7 +35,7 @@ const pages: Record<string, PageMeta> = {
   'gas-leak': {
     title: 'Gas Leak Detection | North Mountain Village, Phoenix',
     description: '24/7 emergency natural gas leak detection & pipe pressure testing in North Mountain Village Phoenix. Fast response & safety shutoff. Call (602) 836-3562.',
-    canonical: 'https://northmountainleakdetection.vercel.app/gas-leak',
+    path: '/gas-leak',
     h1: 'Emergency Gas Leak Detection in North Mountain Village, Phoenix',
     h2: '24/7 Gas Pipe Pressure Decay Testing & Sniffer Diagnostics',
     lead: 'Immediate combustible gas sniffing, emergency shutoff support, and line integrity certification for homes and businesses across North Mountain Village and Phoenix AZ.'
@@ -30,7 +43,7 @@ const pages: Record<string, PageMeta> = {
   'about': {
     title: 'About Us | Leak Detection Pro Phoenix AZ',
     description: 'Learn about Leak Detection Pro in North Mountain Village, Phoenix AZ. Connecting property owners with licensed leak detection specialists. Call (602) 836-3562.',
-    canonical: 'https://northmountainleakdetection.vercel.app/about',
+    path: '/about',
     h1: 'About Leak Detection Pro - North Mountain Village, Phoenix',
     h2: 'Connecting Property Owners with Certified Leak Detection Specialists',
     lead: 'Dedicated referral network based in North Mountain Village (85029) ensuring rapid dispatch of pre-screened Arizona ROC licensed contractors with advanced diagnostic technology.'
@@ -38,7 +51,7 @@ const pages: Record<string, PageMeta> = {
   'contact': {
     title: 'Contact Us | Leak Detection Pro Phoenix AZ',
     description: 'Contact Leak Detection Pro at 2810 W Sahuaro Dr, Phoenix AZ 85029. 24/7 dispatch across North Mountain Village zip codes 85029, 85022, 85023. Call (602) 836-3562.',
-    canonical: 'https://northmountainleakdetection.vercel.app/contact',
+    path: '/contact',
     h1: 'Contact Leak Detection Pro - North Mountain Village',
     h2: '24/7 Emergency Dispatch & Schedule Diagnostic Service',
     lead: 'Located at 2810 W Sahuaro Dr, Phoenix, AZ 85029. Serving North Mountain Village, Moon Valley, and North Phoenix. Call (602) 836-3562 anytime.'
@@ -46,7 +59,7 @@ const pages: Record<string, PageMeta> = {
   'privacy': {
     title: 'Privacy Policy | Leak Detection Pro',
     description: 'Review the privacy policy for Leak Detection Pro. Learn how we handle consumer inquiries, contact details, and quote requests in Phoenix, AZ.',
-    canonical: 'https://northmountainleakdetection.vercel.app/privacy',
+    path: '/privacy',
     h1: 'Privacy Policy - Leak Detection Pro',
     h2: 'Consumer Data Protection & Information Handling Practices',
     lead: 'Clear, transparent privacy practices detailing how contact details, service requests, and quotes are securely processed.'
@@ -54,7 +67,7 @@ const pages: Record<string, PageMeta> = {
   'disclaimer': {
     title: 'Legal Disclaimers | Leak Detection Pro',
     description: 'Important legal disclaimers, licensing disclosures, and terms for Leak Detection Pro contractor referral services in Phoenix and Maricopa County.',
-    canonical: 'https://northmountainleakdetection.vercel.app/disclaimer',
+    path: '/disclaimer',
     h1: 'Legal Disclaimers & Licensing Disclosures',
     h2: 'Independent Contractor Network Notice for Phoenix & Maricopa County',
     lead: 'Important terms governing our marketing and referral services connecting homeowners with independent Arizona licensed plumbing contractors.'
@@ -69,7 +82,45 @@ if (!fs.existsSync(indexHtmlPath)) {
   process.exit(1);
 }
 
-const baseHtml = fs.readFileSync(indexHtmlPath, 'utf8');
+let baseHtml = fs.readFileSync(indexHtmlPath, 'utf8');
+
+// If custom domain is active, update base URLs in index.html
+if (activeBaseUrl !== defaultBaseUrl) {
+  baseHtml = baseHtml.replaceAll(defaultBaseUrl, activeBaseUrl);
+  fs.writeFileSync(indexHtmlPath, baseHtml, 'utf8');
+
+  // Also update sitemap.xml in dist
+  const distSitemap = path.join(distDir, 'sitemap.xml');
+  if (fs.existsSync(distSitemap)) {
+    const sitemapContent = fs.readFileSync(distSitemap, 'utf8').replaceAll(defaultBaseUrl, activeBaseUrl);
+    fs.writeFileSync(distSitemap, sitemapContent, 'utf8');
+  }
+
+  // Also update robots.txt in dist
+  const distRobots = path.join(distDir, 'robots.txt');
+  if (fs.existsSync(distRobots)) {
+    const robotsContent = fs.readFileSync(distRobots, 'utf8').replaceAll(defaultBaseUrl, activeBaseUrl);
+    fs.writeFileSync(distRobots, robotsContent, 'utf8');
+  }
+
+  // Also update llms.txt in dist
+  const distLlms = path.join(distDir, 'llms.txt');
+  if (fs.existsSync(distLlms)) {
+    const llmsContent = fs.readFileSync(distLlms, 'utf8').replaceAll(defaultBaseUrl, activeBaseUrl);
+    fs.writeFileSync(distLlms, llmsContent, 'utf8');
+  }
+}
+
+// Ensure .nojekyll exists in dist for GitHub Pages
+fs.writeFileSync(path.join(distDir, '.nojekyll'), '', 'utf8');
+
+// Ensure CNAME exists in dist if present in public and contains a valid domain
+if (fs.existsSync(cnamePath)) {
+  const cnameVal = fs.readFileSync(cnamePath, 'utf8').trim();
+  if (cnameVal && !cnameVal.startsWith('#')) {
+    fs.writeFileSync(path.join(distDir, 'CNAME'), cnameVal.replace(/^https?:\/\//, '').replace(/\/+$/, ''), 'utf8');
+  }
+}
 
 // Ensure root vercel.json is also copied into dist
 const rootVercelJson = path.resolve(process.cwd(), 'vercel.json');
@@ -87,6 +138,7 @@ for (const [route, meta] of Object.entries(pages)) {
     fs.mkdirSync(routeDir, { recursive: true });
   }
 
+  const canonicalUrl = `${activeBaseUrl}${meta.path}`;
   let routeHtml = baseHtml;
 
   // Replace Title
@@ -101,7 +153,7 @@ for (const [route, meta] of Object.entries(pages)) {
   // Replace Canonical Link
   routeHtml = routeHtml.replace(
     /<link\s+rel="canonical"\s+href="[^"]*"/i,
-    `<link rel="canonical" href="${meta.canonical}"`
+    `<link rel="canonical" href="${canonicalUrl}"`
   );
 
   // Replace OpenGraph
@@ -115,7 +167,7 @@ for (const [route, meta] of Object.entries(pages)) {
   );
   routeHtml = routeHtml.replace(
     /<meta\s+property="og:url"\s+content="[^"]*"/i,
-    `<meta property="og:url" content="${meta.canonical}"`
+    `<meta property="og:url" content="${canonicalUrl}"`
   );
 
   // Replace Twitter

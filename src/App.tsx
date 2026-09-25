@@ -62,41 +62,45 @@ export default function App() {
 
   // Synchronize concise, high-ranking document titles & meta descriptions as per Google Guidelines
   useEffect(() => {
+    const origin = typeof window !== 'undefined' && window.location.origin && !window.location.origin.includes('localhost') && !window.location.origin.includes('run.app')
+      ? window.location.origin
+      : 'https://northmountainleakdetection.vercel.app';
+
     const seoData: Record<Page, { title: string; description: string; canonical: string }> = {
       'home': {
         title: 'Leak Detection Pro | North Mountain Village, Phoenix AZ',
         description: '24/7 water and gas leak detection in North Mountain Village, Phoenix AZ (85029, 85022, 85023, 85053). Certified slab leak & line specialists. Call (602) 836-3562.',
-        canonical: 'https://northmountainleakdetection.vercel.app/'
+        canonical: `${origin}/`
       },
       'water-leak': {
         title: 'Water Leak Detection | North Mountain Village, Phoenix',
         description: 'Emergency slab leak detection & acoustic water pipe locating in North Mountain Village Phoenix AZ. Non-invasive diagnostics. Call (602) 836-3562 for 24/7 service.',
-        canonical: 'https://northmountainleakdetection.vercel.app/water-leak'
+        canonical: `${origin}/water-leak`
       },
       'gas-leak': {
         title: 'Gas Leak Detection | North Mountain Village, Phoenix',
         description: '24/7 emergency natural gas leak detection & pipe pressure testing in North Mountain Village Phoenix. Fast response & safety shutoff. Call (602) 836-3562.',
-        canonical: 'https://northmountainleakdetection.vercel.app/gas-leak'
+        canonical: `${origin}/gas-leak`
       },
       'about': {
         title: 'About Us | Leak Detection Pro Phoenix AZ',
         description: 'Learn about Leak Detection Pro in North Mountain Village, Phoenix AZ. Connecting property owners with licensed leak detection specialists. Call (602) 836-3562.',
-        canonical: 'https://northmountainleakdetection.vercel.app/about'
+        canonical: `${origin}/about`
       },
       'contact': {
         title: 'Contact Us | Leak Detection Pro Phoenix AZ',
         description: 'Contact Leak Detection Pro at 2810 W Sahuaro Dr, Phoenix AZ 85029. 24/7 dispatch across North Mountain Village zip codes 85029, 85022, 85023. Call (602) 836-3562.',
-        canonical: 'https://northmountainleakdetection.vercel.app/contact'
+        canonical: `${origin}/contact`
       },
       'privacy': {
         title: 'Privacy Policy | Leak Detection Pro',
         description: 'Review the privacy policy for Leak Detection Pro. Learn how we handle consumer inquiries, contact details, and quote requests in Phoenix, AZ.',
-        canonical: 'https://northmountainleakdetection.vercel.app/privacy'
+        canonical: `${origin}/privacy`
       },
       'disclaimer': {
         title: 'Legal Disclaimers | Leak Detection Pro',
         description: 'Important legal disclaimers, licensing disclosures, and terms for Leak Detection Pro contractor referral services in Phoenix and Maricopa County.',
-        canonical: 'https://northmountainleakdetection.vercel.app/disclaimer'
+        canonical: `${origin}/disclaimer`
       }
     };
 
