@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="50%" stop-color="#1d4ed8" />
+      <stop offset="100%" stop-color="#1e3a8a" />
+    </linearGradient>
+    <linearGradient id="drop-main" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="50%" stop-color="#bae6fd" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+    <linearGradient id="drop-sec" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#67e8f9" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+  </defs>
+
+  <!-- Squircle Base matching Leak Detection Pro brand -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#bg)" />
+  <rect x="3" y="3" width="58" height="58" rx="15" fill="none" stroke="#60a5fa" stroke-width="1.5" stroke-opacity="0.4" />
+
+  <!-- Acoustic Detection Pulse Soundwaves -->
+  <path d="M 40 17 A 13 13 0 0 1 51 29" fill="none" stroke="#38bdf8" stroke-width="2.75" stroke-linecap="round" stroke-opacity="0.9" />
+  <path d="M 44 12 A 19 19 0 0 1 57 29" fill="none" stroke="#93c5fd" stroke-width="2" stroke-linecap="round" stroke-opacity="0.6" />
+
+  <!-- Main Water Droplet -->
+  <path d="M 28 13 C 28 13 15 28 15 39 C 15 47 21 53 28 53 C 35 53 41 47 41 39 C 41 28 28 13 28 13 Z" fill="url(#drop-main)" />
+  <path d="M 21 34 C 19.5 37 19.5 41 21.5 44 C 20 42 19 39 19.5 36 C 20 34 20.5 33 21 34 Z" fill="#ffffff" fill-opacity="0.9" />
+
+  <!-- Secondary Acoustic Droplet (Accent) -->
+  <path d="M 40 27 C 40 27 33 35 33 42 C 33 46.5 36.5 50 41 50 C 45.5 50 49 46.5 49 42 C 49 35 40 27 40 27 Z" fill="url(#drop-sec)" />
+  <path d="M 37 39 C 36 41 36 43 37.5 45 C 36.5 43.5 36 42 36.5 40 Z" fill="#ffffff" fill-opacity="0.8" />
+</svg>
