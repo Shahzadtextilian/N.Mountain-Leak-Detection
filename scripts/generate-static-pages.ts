@@ -10,7 +10,7 @@ interface PageMeta {
   lead: string;
 }
 
-const defaultBaseUrl = 'https://northmountainleakdetection.vercel.app';
+const defaultBaseUrl = 'https://northmountainvillageleakdetectionaz.com';
 
 // Detect custom domain from public/CNAME or environment
 let activeBaseUrl = defaultBaseUrl;

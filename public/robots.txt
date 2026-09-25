@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://northmountainleakdetection.vercel.app/sitemap.xml
+Sitemap: https://northmountainvillageleakdetectionaz.com/sitemap.xml

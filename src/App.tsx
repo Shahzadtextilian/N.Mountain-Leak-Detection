@@ -64,7 +64,7 @@ export default function App() {
   useEffect(() => {
     const origin = typeof window !== 'undefined' && window.location.origin && !window.location.origin.includes('localhost') && !window.location.origin.includes('run.app')
       ? window.location.origin
-      : 'https://northmountainleakdetection.vercel.app';
+      : 'https://northmountainvillageleakdetectionaz.com';
 
     const seoData: Record<Page, { title: string; description: string; canonical: string }> = {
       'home': {
